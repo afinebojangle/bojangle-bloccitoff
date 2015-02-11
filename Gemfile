@@ -5,6 +5,7 @@ gem 'devise'
 gem 'sendgrid'
 gem 'figaro', '1.0'
 gem 'pundit'
+gem 'faker'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
