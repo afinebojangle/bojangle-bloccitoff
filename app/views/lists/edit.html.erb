@@ -1,0 +1,9 @@
+<div class="text-center list-box">
+  <h3>Edit your list title</h3>
+    <%= form_for @list do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+
+      <%= f.submit "Update", class: "btn btn-sucess" %>
+    <% end %>
+</div>

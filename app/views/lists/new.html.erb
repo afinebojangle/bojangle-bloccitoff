@@ -1,0 +1,9 @@
+<div class="text-center list-box">
+  <h3>Create a new list</h3>
+    <%= form_for @list do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+
+      <%= f.submit "Save", class: "btn btn-success" %>
+    <% end %>
+</div>

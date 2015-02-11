@@ -4,6 +4,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'sendgrid'
 gem 'figaro', '1.0'
+gem 'pundit'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
