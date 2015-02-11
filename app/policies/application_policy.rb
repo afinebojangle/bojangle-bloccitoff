@@ -15,7 +15,7 @@ class ApplicationPolicy
   end
 
   def create?
-    user.present? && (current_user.list == nil)
+    user.present?
   end
 
   def new?
