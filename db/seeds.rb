@@ -2,23 +2,20 @@ require 'faker'
 
 10.times do
   user = User.new(
-    first_name:    Faker::Lorem.word,
-    last_name:     Faker::Lorem.word,
+    first_name:    Faker::Name.first_name,
+    last_name:     Faker::Name.last_name,
     email:         Faker::Internet.email,
     password:      Faker::Lorem.characters(8)
     )
   user.skip_confirmation!
   user.save!
-end
-users = User.all
-
-10.times do
-  list = List.new(
-    title:    Faker::Lorem.sentence,
-    user_id:     users.sample
+  
+  list = user.build_list(
+    title:         Faker::Lorem.sentence
     )
+  list.save!
 end
-lists = List.all
+
 
 user = User.first
 user.skip_reconfirmation!
