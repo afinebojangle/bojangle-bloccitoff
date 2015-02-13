@@ -4,6 +4,7 @@ class ListsController < ApplicationController
   def show
     @list = current_user.list
     authorize @list
+    @items = @list.items
   end
 
   def new

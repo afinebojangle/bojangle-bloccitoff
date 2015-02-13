@@ -1,6 +1,6 @@
 require 'faker'
 
-20.times do
+10.times do
   user = User.new(
     first_name:    Faker::Name.first_name,
     last_name:     Faker::Name.last_name,
@@ -14,6 +14,15 @@ require 'faker'
     title:         Faker::Lorem.sentence
     )
   list.save!
+end
+lists = List.all
+
+50.times do
+  item = Item.new(
+    name:          Faker::Lorem.sentence,
+    list:          lists.sample
+    )
+  item.save!
 end
 
 
@@ -29,4 +38,4 @@ user.update_attributes!(
 puts "Seed Finished"
 puts "#{User.count} users were created"
 puts "#{List.count} lists were created"
-  
+puts "#{Item.count} items were created"  
