@@ -9,8 +9,10 @@
     <small><%= link_to "Edit", edit_list_path(@list) %></small>
   </div>
   <div class='row'>
-    <%= render partial: 'items/item', collection: @items %>
-    <%= render "items/form" %>
+    <table class="table table-striped">
+      <tr><%= render partial: 'items/item', collection: @items %></tr>
+      <tr><%= render "items/form" %></tr>
+    </table>
   </div>
 
 <% end %>
