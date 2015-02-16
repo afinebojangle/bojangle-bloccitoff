@@ -1,7 +1,8 @@
 class ItemsController < ApplicationController
   def create
     @list = current_user.list
-    @item = @list.build(params.require(:item).permit(:name))
+    @item = Item.new(params.require(:item).permit(:name))
+    @item.list = @list
     if @item.save
       flash[:notice] = "A new item was created."
       redirect_to @list
