@@ -11,4 +11,16 @@ class ItemsController < ApplicationController
       render :new
     end
   end
+  
+  def destroy
+    @list = List.find(params[:list_id])
+    @item = @list.items.find(params[:id])
+    if @item.destroy
+      flash[:notice] = "Item Complete!"
+      redirect_to list_path
+    else
+      flash[:error] = "There was an error completing the task."
+      render list_path
+    end
+  end
 end

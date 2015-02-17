@@ -1,3 +1,5 @@
-<td><p><%= item.name %></p></td>
-<td><p>Days left goes here</p></td>
-<td><%= link_to "", list_item_path, method: :delete, class: 'glyphicon glyphicon-ok' %></td>
+<tr>
+  <td><p><%= item.name %></p></td>
+  <td><p><%= 7 - item.days_left %></p></td>
+  <td><%= link_to "", list_item_path(@list, item), method: :delete, class: 'glyphicon glyphicon-ok' %></td>
+</tr>
