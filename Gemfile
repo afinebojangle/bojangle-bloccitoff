@@ -6,6 +6,7 @@ gem 'sendgrid'
 gem 'figaro', '1.0'
 gem 'pundit'
 gem 'faker'
+gem 'whenever', :require => false
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
