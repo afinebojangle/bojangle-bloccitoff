@@ -8,7 +8,7 @@
     <h4><%= @list.title %></h4>
     <small><%= link_to "Edit", edit_list_path(@list) %></small>
   </div>
-  <table class="table table-striped">
+  <table class="table table-striped js-items">
     <%= render partial: 'items/item', collection: @items %>
   </table>
   <%= render "items/form" %>

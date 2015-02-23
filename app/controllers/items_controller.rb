@@ -5,10 +5,13 @@ class ItemsController < ApplicationController
     @item.list = @list
     if @item.save
       flash[:notice] = "A new item was created."
-      redirect_to @list
     else
       flash[:error] = "There was an error saving the item. Please try again"
-      render :new
+    end
+    
+    respond_to do |format|
+      format.js
+      format.html
     end
   end
   
@@ -17,10 +20,13 @@ class ItemsController < ApplicationController
     @item = @list.items.find(params[:id])
     if @item.destroy
       flash[:notice] = "Item Complete!"
-      redirect_to list_path
     else
       flash[:error] = "There was an error completing the task."
-      render list_path
+    end
+    
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 end

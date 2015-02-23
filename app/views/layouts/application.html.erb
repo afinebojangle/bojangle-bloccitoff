@@ -10,7 +10,9 @@
   <div class="container">
     <ul class="nav nav-tabs">
       <li><%= link_to "Bojangle-Bloccitoff", root_path %></li>
-      <li><%= link_to "About", about_path %></li>
+      <% if current_user %>
+        <li><%= link_to "Todo", todo_path %></li>
+      <% end %>
 
         <div class="pull-right user-info">
           <% if current_user %>
