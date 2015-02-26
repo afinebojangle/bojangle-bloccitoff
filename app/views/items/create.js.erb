@@ -1,1 +1,1 @@
-$('.js-items').append("<%= escape_javascript(render partial: 'items/item', collection: @items) %>");
+$('.js-items').append("<%= escape_javascript(render @item) %>");
